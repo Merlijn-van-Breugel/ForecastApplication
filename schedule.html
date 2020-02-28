@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    6">
+    <title>PlannerApp</title>
+
+
+    <!-- favicon
+      ============================================ -->
+    <link rel="shortcut icon" type="image/x-jfif" href="plane_favicon.jfif">
+    <!-- Google Fonts
+		============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- owl.carousel CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/owl.transitions.css">
+    <!-- animate CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- normalize CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- meanmenu icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/meanmenu.min.css">
+    <!-- main CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- educate icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/educate-custon-icon.css">
+    <!-- morrisjs CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/morrisjs/morris.css">
+    <!-- mCustomScrollbar CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- metisMenu CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/metisMenu/metisMenu.min.css">
+    <link rel="stylesheet" href="css/metisMenu/metisMenu-vertical.css">
+    <!-- calendar CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/calendar/fullcalendar.min.css">
+    <link rel="stylesheet" href="css/calendar/fullcalendar.print.min.css">
+    <!-- style CSS
+		============================================ -->
+    <link rel="stylesheet" href="style.css">
+    <!-- responsive CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- modernizr JS
+		============================================ -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/dashboard/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    <!--<meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">-->
+    <meta name="theme-color" content="#563d7c">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+    .main_link{
+    color:white}
+
+
+
+
+
+
+
+
+
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <div class="col-6">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">PlannerApp</a>
+    </div>
+    <div class="col">
+        <a class="main_link nav-link" href="#">Planner</a>
+    </div>
+    <div class="col">
+        <a class="main_link nav-link" href="#">Dashboard</a>
+    </div>
+    <div class="link col">
+        <a class="main_link nav-link" href="#">Forecast</a>
+    </div>
+    <div class="col">
+        <a class="nav-link" href="#">Sign out</a>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <br><br>
+
+            <!-- PUT CONTENT HERE -->
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Personal Planner</h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group mr-2">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calender-area mg-b-15">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="calender-inner">
+                                <div id="calendar" class="fc fc-unthemed fc-ltr">
+                                    <div class="fc-toolbar fc-header-toolbar">
+                                        <div class="fc-left">
+                                            <div class="fc-button-group">
+                                                <button type="button"
+                                                        class="fc-prev-button fc-button fc-state-default fc-corner-left">
+                                                    <span class="fc-icon fc-icon-left-single-arrow"></span></button>
+                                                <button type="button"
+                                                        class="fc-next-button fc-button fc-state-default fc-corner-right">
+                                                    <span class="fc-icon fc-icon-right-single-arrow"></span></button>
+                                            </div>
+                                            <button type="button"
+                                                    class="fc-today-button fc-button fc-state-default fc-corner-left fc-corner-right fc-state-disabled"
+                                                    disabled="">today
+                                            </button>
+                                        </div>
+                                        <div class="fc-right">
+                                            <div class="fc-button-group">
+                                                <button type="button"
+                                                        class="fc-month-button fc-button fc-state-default fc-corner-left fc-state-active">
+                                                    month
+                                                </button>
+                                                <button type="button"
+                                                        class="fc-agendaWeek-button fc-button fc-state-default">week
+                                                </button>
+                                                <button type="button"
+                                                        class="fc-agendaDay-button fc-button fc-state-default">day
+                                                </button>
+                                                <button type="button"
+                                                        class="fc-listWeek-button fc-button fc-state-default fc-corner-right">
+                                                    list
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="fc-center"><h2>February 2020</h2></div>
+                                        <div class="fc-clear"></div>
+                                    </div>
+                                    <div class="fc-view-container" style="">
+                                        <div class="fc-view fc-month-view fc-basic-view" style="">
+                                            <table class="">
+                                                <thead class="fc-head">
+                                                <tr>
+                                                    <td class="fc-head-container fc-widget-header">
+                                                        <div class="fc-row fc-widget-header">
+                                                            <table class="">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th class="fc-day-header fc-widget-header fc-sun">
+                                                                        <span>Sun</span></th>
+                                                                    <th class="fc-day-header fc-widget-header fc-mon">
+                                                                        <span>Mon</span></th>
+                                                                    <th class="fc-day-header fc-widget-header fc-tue">
+                                                                        <span>Tue</span></th>
+                                                                    <th class="fc-day-header fc-widget-header fc-wed">
+                                                                        <span>Wed</span></th>
+                                                                    <th class="fc-day-header fc-widget-header fc-thu">
+                                                                        <span>Thu</span></th>
+                                                                    <th class="fc-day-header fc-widget-header fc-fri">
+                                                                        <span>Fri</span></th>
+                                                                    <th class="fc-day-header fc-widget-header fc-sat">
+                                                                        <span>Sat</span></th>
+                                                                </tr>
+                                                                </thead>
+                                                            </table>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                </thead>
+                                                <tbody class="fc-body">
+                                                <tr>
+                                                    <td class="fc-widget-content">
+                                                        <div class="fc-scroller fc-day-grid-container"
+                                                             style="overflow: hidden; height: 287px;">
+                                                            <div class="fc-day-grid fc-unselectable">
+                                                                <div class="fc-row fc-week fc-widget-content fc-rigid"
+                                                                     style="height: 47px;">
+                                                                    <div class="fc-bg">
+                                                                        <table class="">
+                                                                            <tbody>
+                                                                            <tr>
+                                                                                <td class="fc-day fc-widget-content fc-sun fc-other-month fc-past"
+                                                                                    data-date="2020-01-26"></td>
+                                                                                <td class="fc-day fc-widget-content fc-mon fc-other-month fc-past"
+                                                                                    data-date="2020-01-27"></td>
+                                                                                <td class="fc-day fc-widget-content fc-tue fc-other-month fc-past"
+                                                                                    data-date="2020-01-28"></td>
+                                                                                <td class="fc-day fc-widget-content fc-wed fc-other-month fc-past"
+                                                                                    data-date="2020-01-29"></td>
+                                                                                <td class="fc-day fc-widget-content fc-thu fc-other-month fc-past"
+                                                                                    data-date="2020-01-30"></td>
+                                                                                <td class="fc-day fc-widget-content fc-fri fc-other-month fc-past"
+                                                                                    data-date="2020-01-31"></td>
+                                                                                <td class="fc-day fc-widget-content fc-sat fc-past"
+                                                                                    data-date="2020-02-01"></td>
+                                                                            </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <div class="fc-content-skeleton">
+                                                                        <table>
+                                                                            <thead>
+                                                                            <tr>
+                                                                                <td class="fc-day-top fc-sun fc-other-month fc-past"
+                                                                                    data-date="2020-01-26"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-01-26&quot;,&quot;type&quot;:&quot;day&quot;}">26</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-mon fc-other-month fc-past"
+                                                                                    data-date="2020-01-27"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-01-27&quot;,&quot;type&quot;:&quot;day&quot;}">27</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-tue fc-other-month fc-past"
+                                                                                    data-date="2020-01-28"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-01-28&quot;,&quot;type&quot;:&quot;day&quot;}">28</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-wed fc-other-month fc-past"
+                                                                                    data-date="2020-01-29"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-01-29&quot;,&quot;type&quot;:&quot;day&quot;}">29</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-thu fc-other-month fc-past"
+                                                                                    data-date="2020-01-30"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-01-30&quot;,&quot;type&quot;:&quot;day&quot;}">30</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-fri fc-other-month fc-past"
+                                                                                    data-date="2020-01-31"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-01-31&quot;,&quot;type&quot;:&quot;day&quot;}">31</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-sat fc-past"
+                                                                                    data-date="2020-02-01"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-01&quot;,&quot;type&quot;:&quot;day&quot;}">1</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                            <tr>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td class="fc-event-container"><a
+                                                                                        class="fc-day-grid-event fc-h-event fc-event fc-start fc-end fc-draggable fc-resizable"
+                                                                                        style="background-color: rgb(0, 109, 240); border-color: rgb(0, 109, 240); color: rgb(31, 46, 134);">
+                                                                                    <div class="fc-content"><span
+                                                                                            class="fc-title">All Day Event</span>
+                                                                                    </div>
+                                                                                    <div class="fc-resizer fc-end-resizer"></div>
+                                                                                </a></td>
+                                                                            </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="fc-row fc-week fc-widget-content fc-rigid"
+                                                                     style="height: 47px;">
+                                                                    <div class="fc-bg">
+                                                                        <table class="">
+                                                                            <tbody>
+                                                                            <tr>
+                                                                                <td class="fc-day fc-widget-content fc-sun fc-past"
+                                                                                    data-date="2020-02-02"></td>
+                                                                                <td class="fc-day fc-widget-content fc-mon fc-past"
+                                                                                    data-date="2020-02-03"></td>
+                                                                                <td class="fc-day fc-widget-content fc-tue fc-past"
+                                                                                    data-date="2020-02-04"></td>
+                                                                                <td class="fc-day fc-widget-content fc-wed fc-past"
+                                                                                    data-date="2020-02-05"></td>
+                                                                                <td class="fc-day fc-widget-content fc-thu fc-past"
+                                                                                    data-date="2020-02-06"></td>
+                                                                                <td class="fc-day fc-widget-content fc-fri fc-past"
+                                                                                    data-date="2020-02-07"></td>
+                                                                                <td class="fc-day fc-widget-content fc-sat fc-past"
+                                                                                    data-date="2020-02-08"></td>
+                                                                            </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <div class="fc-content-skeleton">
+                                                                        <table>
+                                                                            <thead>
+                                                                            <tr>
+                                                                                <td class="fc-day-top fc-sun fc-past"
+                                                                                    data-date="2020-02-02"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-02&quot;,&quot;type&quot;:&quot;day&quot;}">2</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-mon fc-past"
+                                                                                    data-date="2020-02-03"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-03&quot;,&quot;type&quot;:&quot;day&quot;}">3</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-tue fc-past"
+                                                                                    data-date="2020-02-04"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-04&quot;,&quot;type&quot;:&quot;day&quot;}">4</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-wed fc-past"
+                                                                                    data-date="2020-02-05"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-05&quot;,&quot;type&quot;:&quot;day&quot;}">5</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-thu fc-past"
+                                                                                    data-date="2020-02-06"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-06&quot;,&quot;type&quot;:&quot;day&quot;}">6</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-fri fc-past"
+                                                                                    data-date="2020-02-07"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-07&quot;,&quot;type&quot;:&quot;day&quot;}">7</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-sat fc-past"
+                                                                                    data-date="2020-02-08"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-08&quot;,&quot;type&quot;:&quot;day&quot;}">8</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                            <tr>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td class="fc-event-container"
+                                                                                    colspan="2"><a
+                                                                                        class="fc-day-grid-event fc-h-event fc-event fc-start fc-not-end fc-draggable"
+                                                                                        style="background-color: rgb(147, 62, 197); border-color: rgb(147, 62, 197); color: rgb(31, 46, 134);">
+                                                                                    <div class="fc-content"><span
+                                                                                            class="fc-title">Working</span>
+                                                                                    </div>
+                                                                                </a></td>
+                                                                            </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="fc-row fc-week fc-widget-content fc-rigid"
+                                                                     style="height: 47px;">
+                                                                    <div class="fc-bg">
+                                                                        <table class="">
+                                                                            <tbody>
+                                                                            <tr>
+                                                                                <td class="fc-day fc-widget-content fc-sun fc-past"
+                                                                                    data-date="2020-02-09"></td>
+                                                                                <td class="fc-day fc-widget-content fc-mon fc-past"
+                                                                                    data-date="2020-02-10"></td>
+                                                                                <td class="fc-day fc-widget-content fc-tue fc-past"
+                                                                                    data-date="2020-02-11"></td>
+                                                                                <td class="fc-day fc-widget-content fc-wed fc-past"
+                                                                                    data-date="2020-02-12"></td>
+                                                                                <td class="fc-day fc-widget-content fc-thu fc-past"
+                                                                                    data-date="2020-02-13"></td>
+                                                                                <td class="fc-day fc-widget-content fc-fri fc-past"
+                                                                                    data-date="2020-02-14"></td>
+                                                                                <td class="fc-day fc-widget-content fc-sat fc-past"
+                                                                                    data-date="2020-02-15"></td>
+                                                                            </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <div class="fc-content-skeleton">
+                                                                        <table>
+                                                                            <thead>
+                                                                            <tr>
+                                                                                <td class="fc-day-top fc-sun fc-past"
+                                                                                    data-date="2020-02-09"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-09&quot;,&quot;type&quot;:&quot;day&quot;}">9</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-mon fc-past"
+                                                                                    data-date="2020-02-10"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-10&quot;,&quot;type&quot;:&quot;day&quot;}">10</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-tue fc-past"
+                                                                                    data-date="2020-02-11"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-11&quot;,&quot;type&quot;:&quot;day&quot;}">11</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-wed fc-past"
+                                                                                    data-date="2020-02-12"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-12&quot;,&quot;type&quot;:&quot;day&quot;}">12</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-thu fc-past"
+                                                                                    data-date="2020-02-13"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-13&quot;,&quot;type&quot;:&quot;day&quot;}">13</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-fri fc-past"
+                                                                                    data-date="2020-02-14"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-14&quot;,&quot;type&quot;:&quot;day&quot;}">14</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-sat fc-past"
+                                                                                    data-date="2020-02-15"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-15&quot;,&quot;type&quot;:&quot;day&quot;}">15</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                            <tr>
+                                                                                <td class="fc-event-container"><a
+                                                                                        class="fc-day-grid-event fc-h-event fc-event fc-not-start fc-end fc-draggable fc-resizable"
+                                                                                        style="background-color: rgb(147, 62, 197); border-color: rgb(147, 62, 197); color: rgb(31, 46, 134);">
+                                                                                    <div class="fc-content"><span
+                                                                                            class="fc-title">Working</span>
+                                                                                    </div>
+                                                                                    <div class="fc-resizer fc-end-resizer"></div>
+                                                                                </a></td>
+                                                                                <td rowspan="2"></td>
+                                                                                <td rowspan="2"></td>
+                                                                                <td rowspan="2"></td>
+                                                                                <td rowspan="2"></td>
+                                                                                <td rowspan="2"></td>
+                                                                                <td rowspan="2"></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="fc-event-container"><a
+                                                                                        class="fc-day-grid-event fc-h-event fc-event fc-start fc-end fc-draggable"
+                                                                                        style="background-color:#65b12d;border-color:#65b12d;color:#1f2e86">
+                                                                                    <div class="fc-content"><span
+                                                                                            class="fc-time">4p</span>
+                                                                                        <span class="fc-title"> Meeting </span>
+                                                                                    </div>
+                                                                                </a></td>
+                                                                            </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="fc-row fc-week fc-widget-content fc-rigid"
+                                                                     style="height: 47px;">
+                                                                    <div class="fc-bg">
+                                                                        <table class="">
+                                                                            <tbody>
+                                                                            <tr>
+                                                                                <td class="fc-day fc-widget-content fc-sun fc-past"
+                                                                                    data-date="2020-02-16"></td>
+                                                                                <td class="fc-day fc-widget-content fc-mon fc-past"
+                                                                                    data-date="2020-02-17"></td>
+                                                                                <td class="fc-day fc-widget-content fc-tue fc-past"
+                                                                                    data-date="2020-02-18"></td>
+                                                                                <td class="fc-day fc-widget-content fc-wed fc-past"
+                                                                                    data-date="2020-02-19"></td>
+                                                                                <td class="fc-day fc-widget-content fc-thu fc-past"
+                                                                                    data-date="2020-02-20"></td>
+                                                                                <td class="fc-day fc-widget-content fc-fri fc-past"
+                                                                                    data-date="2020-02-21"></td>
+                                                                                <td class="fc-day fc-widget-content fc-sat fc-past"
+                                                                                    data-date="2020-02-22"></td>
+                                                                            </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <div class="fc-content-skeleton">
+                                                                        <table>
+                                                                            <thead>
+                                                                            <tr>
+                                                                                <td class="fc-day-top fc-sun fc-past"
+                                                                                    data-date="2020-02-16"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-16&quot;,&quot;type&quot;:&quot;day&quot;}">16</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-mon fc-past"
+                                                                                    data-date="2020-02-17"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-17&quot;,&quot;type&quot;:&quot;day&quot;}">17</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-tue fc-past"
+                                                                                    data-date="2020-02-18"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-18&quot;,&quot;type&quot;:&quot;day&quot;}">18</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-wed fc-past"
+                                                                                    data-date="2020-02-19"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-19&quot;,&quot;type&quot;:&quot;day&quot;}">19</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-thu fc-past"
+                                                                                    data-date="2020-02-20"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-20&quot;,&quot;type&quot;:&quot;day&quot;}">20</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-fri fc-past"
+                                                                                    data-date="2020-02-21"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-21&quot;,&quot;type&quot;:&quot;day&quot;}">21</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-sat fc-past"
+                                                                                    data-date="2020-02-22"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-22&quot;,&quot;type&quot;:&quot;day&quot;}">22</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                            <tr>
+                                                                                <td class="fc-event-container"><a
+                                                                                        class="fc-day-grid-event fc-h-event fc-event fc-start fc-end fc-draggable"
+                                                                                        style="background-color: rgb(216, 0, 39); border-color: rgb(216, 0, 39); color: rgb(31, 46, 134);">
+                                                                                    <div class="fc-content"><span
+                                                                                            class="fc-time">4p</span>
+                                                                                        <span class="fc-title">Repeating Event</span>
+                                                                                    </div>
+                                                                                </a></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                            </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="fc-row fc-week fc-widget-content fc-rigid"
+                                                                     style="height: 47px;">
+                                                                    <div class="fc-bg">
+                                                                        <table class="">
+                                                                            <tbody>
+                                                                            <tr>
+                                                                                <td class="fc-day fc-widget-content fc-sun fc-past"
+                                                                                    data-date="2020-02-23"></td>
+                                                                                <td class="fc-day fc-widget-content fc-mon fc-past"
+                                                                                    data-date="2020-02-24"></td>
+                                                                                <td class="fc-day fc-widget-content fc-tue fc-past"
+                                                                                    data-date="2020-02-25"></td>
+                                                                                <td class="fc-day fc-widget-content fc-wed fc-past"
+                                                                                    data-date="2020-02-26"></td>
+                                                                                <td class="fc-day fc-widget-content fc-thu fc-past"
+                                                                                    data-date="2020-02-27"></td>
+                                                                                <td class="fc-day fc-widget-content fc-fri fc-today "
+                                                                                    data-date="2020-02-28"></td>
+                                                                                <td class="fc-day fc-widget-content fc-sat fc-future"
+                                                                                    data-date="2020-02-29"></td>
+                                                                            </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <div class="fc-content-skeleton">
+                                                                        <table>
+                                                                            <thead>
+                                                                            <tr>
+                                                                                <td class="fc-day-top fc-sun fc-past"
+                                                                                    data-date="2020-02-23"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-23&quot;,&quot;type&quot;:&quot;day&quot;}">23</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-mon fc-past"
+                                                                                    data-date="2020-02-24"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-24&quot;,&quot;type&quot;:&quot;day&quot;}">24</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-tue fc-past"
+                                                                                    data-date="2020-02-25"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-25&quot;,&quot;type&quot;:&quot;day&quot;}">25</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-wed fc-past"
+                                                                                    data-date="2020-02-26"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-26&quot;,&quot;type&quot;:&quot;day&quot;}">26</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-thu fc-past"
+                                                                                    data-date="2020-02-27"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-27&quot;,&quot;type&quot;:&quot;day&quot;}">27</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-fri fc-today "
+                                                                                    data-date="2020-02-28"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-28&quot;,&quot;type&quot;:&quot;day&quot;}">28</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-sat fc-future"
+                                                                                    data-date="2020-02-29"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-02-29&quot;,&quot;type&quot;:&quot;day&quot;}">29</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                            <tr>
+                                                                                <td rowspan="7"></td>
+                                                                                <td rowspan="7"></td>
+                                                                                <td rowspan="7"></td>
+                                                                                <td rowspan="7"></td>
+                                                                                <td class="fc-event-container"
+                                                                                    colspan="2"><a
+                                                                                        class="fc-day-grid-event fc-h-event fc-event fc-start fc-end fc-draggable fc-resizable"
+                                                                                        style="background-color: rgb(243, 195, 11); border-color: rgb(243, 195, 11); color: rgb(31, 46, 134);">
+                                                                                    <div class="fc-content"><span
+                                                                                            class="fc-title">Conference</span>
+                                                                                    </div>
+                                                                                    <div class="fc-resizer fc-end-resizer"></div>
+                                                                                </a></td>
+                                                                                <td class="fc-event-container"
+                                                                                    rowspan="7"><a
+                                                                                        class="fc-day-grid-event fc-h-event fc-event fc-start fc-end fc-draggable"
+                                                                                        style="background-color: rgb(255, 87, 34); border-color: rgb(255, 87, 34); color: rgb(31, 46, 134);">
+                                                                                    <div class="fc-content"><span
+                                                                                            class="fc-time">7a</span>
+                                                                                        <span class="fc-title">Birthday Party</span>
+                                                                                    </div>
+                                                                                </a></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td rowspan="6"></td>
+                                                                                <td class="fc-event-container"><a
+                                                                                        class="fc-day-grid-event fc-h-event fc-event fc-start fc-end fc-draggable fc-resizable"
+                                                                                        href="http://google.com/"
+                                                                                        style="background-color:#323232;border-color:#323232;color:#1f2e86">
+                                                                                    <div class="fc-content"><span
+                                                                                            class="fc-title">Click for Google</span>
+                                                                                    </div>
+                                                                                    <div class="fc-resizer fc-end-resizer"></div>
+                                                                                </a></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="fc-event-container"><a
+                                                                                        class="fc-day-grid-event fc-h-event fc-event fc-start fc-end fc-draggable"
+                                                                                        style="background-color:#1f2e86;border-color:#1f2e86;color:#1f2e86">
+                                                                                    <div class="fc-content"><span
+                                                                                            class="fc-time">10:30a</span>
+                                                                                        <span class="fc-title">Meeting</span>
+                                                                                    </div>
+                                                                                </a></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="fc-event-container"><a
+                                                                                        class="fc-day-grid-event fc-h-event fc-event fc-start fc-end fc-draggable"
+                                                                                        style="background-color:#0D4CFF;border-color:#0D4CFF;color:#1f2e86">
+                                                                                    <div class="fc-content"><span
+                                                                                            class="fc-time">12p</span>
+                                                                                        <span class="fc-title">Lunch</span>
+                                                                                    </div>
+                                                                                </a></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="fc-event-container"><a
+                                                                                        class="fc-day-grid-event fc-h-event fc-event fc-start fc-end fc-draggable"
+                                                                                        style="background-color:#1f2e86;border-color:#1f2e86;color:#1f2e86">
+                                                                                    <div class="fc-content"><span
+                                                                                            class="fc-time">2:30p</span>
+                                                                                        <span class="fc-title">Meeting</span>
+                                                                                    </div>
+                                                                                </a></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="fc-event-container"><a
+                                                                                        class="fc-day-grid-event fc-h-event fc-event fc-start fc-end fc-draggable"
+                                                                                        style="background-color:#AA00FF;border-color:#AA00FF;color:#1f2e86">
+                                                                                    <div class="fc-content"><span
+                                                                                            class="fc-time">5:30p</span>
+                                                                                        <span class="fc-title">Happy Hour</span>
+                                                                                    </div>
+                                                                                </a></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="fc-event-container"><a
+                                                                                        class="fc-day-grid-event fc-h-event fc-event fc-start fc-end fc-draggable"
+                                                                                        style="background-color:#00BCD4;border-color:#00BCD4;color:#1f2e86">
+                                                                                    <div class="fc-content"><span
+                                                                                            class="fc-time">8p</span>
+                                                                                        <span class="fc-title">Dinner</span>
+                                                                                    </div>
+                                                                                </a></td>
+                                                                            </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="fc-row fc-week fc-widget-content fc-rigid"
+                                                                     style="height: 52px;">
+                                                                    <div class="fc-bg">
+                                                                        <table class="">
+                                                                            <tbody>
+                                                                            <tr>
+                                                                                <td class="fc-day fc-widget-content fc-sun fc-other-month fc-future"
+                                                                                    data-date="2020-03-01"></td>
+                                                                                <td class="fc-day fc-widget-content fc-mon fc-other-month fc-future"
+                                                                                    data-date="2020-03-02"></td>
+                                                                                <td class="fc-day fc-widget-content fc-tue fc-other-month fc-future"
+                                                                                    data-date="2020-03-03"></td>
+                                                                                <td class="fc-day fc-widget-content fc-wed fc-other-month fc-future"
+                                                                                    data-date="2020-03-04"></td>
+                                                                                <td class="fc-day fc-widget-content fc-thu fc-other-month fc-future"
+                                                                                    data-date="2020-03-05"></td>
+                                                                                <td class="fc-day fc-widget-content fc-fri fc-other-month fc-future"
+                                                                                    data-date="2020-03-06"></td>
+                                                                                <td class="fc-day fc-widget-content fc-sat fc-other-month fc-future"
+                                                                                    data-date="2020-03-07"></td>
+                                                                            </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <div class="fc-content-skeleton">
+                                                                        <table>
+                                                                            <thead>
+                                                                            <tr>
+                                                                                <td class="fc-day-top fc-sun fc-other-month fc-future"
+                                                                                    data-date="2020-03-01"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-03-01&quot;,&quot;type&quot;:&quot;day&quot;}">1</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-mon fc-other-month fc-future"
+                                                                                    data-date="2020-03-02"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-03-02&quot;,&quot;type&quot;:&quot;day&quot;}">2</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-tue fc-other-month fc-future"
+                                                                                    data-date="2020-03-03"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-03-03&quot;,&quot;type&quot;:&quot;day&quot;}">3</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-wed fc-other-month fc-future"
+                                                                                    data-date="2020-03-04"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-03-04&quot;,&quot;type&quot;:&quot;day&quot;}">4</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-thu fc-other-month fc-future"
+                                                                                    data-date="2020-03-05"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-03-05&quot;,&quot;type&quot;:&quot;day&quot;}">5</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-fri fc-other-month fc-future"
+                                                                                    data-date="2020-03-06"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-03-06&quot;,&quot;type&quot;:&quot;day&quot;}">6</a>
+                                                                                </td>
+                                                                                <td class="fc-day-top fc-sat fc-other-month fc-future"
+                                                                                    data-date="2020-03-07"><a
+                                                                                        class="fc-day-number"
+                                                                                        data-goto="{&quot;date&quot;:&quot;2020-03-07&quot;,&quot;type&quot;:&quot;day&quot;}">7</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                            <tr>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                            </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+        </main>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script>
+    window.jQuery || document.write('<script src="https://getbootstrap.com/docs/4.4/dist/js/bootstrap.bundle.min.js"><\/script>')
+
+
+
+</script>
+<script src="/docs/4.4/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+<script src="dashboard.js"></script>
+<!-- jquery
+       ============================================ -->
+<script src="js/vendor/jquery-1.12.4.min.js"></script>
+<!-- bootstrap JS
+    ============================================ -->
+<script src="js/bootstrap.min.js"></script>
+<!-- wow JS
+    ============================================ -->
+<script src="js/wow.min.js"></script>
+<!-- price-slider JS
+    ============================================ -->
+<script src="js/jquery-price-slider.js"></script>
+<!-- meanmenu JS
+    ============================================ -->
+<script src="js/jquery.meanmenu.js"></script>
+<!-- owl.carousel JS
+    ============================================ -->
+<script src="js/owl.carousel.min.js"></script>
+<!-- sticky JS
+    ============================================ -->
+<script src="js/jquery.sticky.js"></script>
+<!-- scrollUp JS
+    ============================================ -->
+<script src="js/jquery.scrollUp.min.js"></script>
+<!-- mCustomScrollbar JS
+    ============================================ -->
+<script src="js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/scrollbar/mCustomScrollbar-active.js"></script>
+<!-- metisMenu JS
+    ============================================ -->
+<script src="js/metisMenu/metisMenu.min.js"></script>
+<script src="js/metisMenu/metisMenu-active.js"></script>
+<!-- morrisjs JS
+    ============================================ -->
+<script src="js/sparkline/jquery.sparkline.min.js"></script>
+<script src="js/sparkline/jquery.charts-sparkline.js"></script>
+<script src="js/sparkline/sparkline-active.js"></script>
+<!-- calendar JS
+    ============================================ -->
+<script src="js/calendar/moment.min.js"></script>
+<script src="js/calendar/fullcalendar.min.js"></script>
+<script src="js/calendar/fullcalendar-active.js"></script>
+<!-- plugins JS
+    ============================================ -->
+<script src="js/plugins.js"></script>
+<!-- main JS
+    ============================================ -->
+<script src="js/main.js"></script>
+<!-- tawk chat JS
+    ============================================ -->
+<script src="js/tawk-chat.js"></script>
+</body>
+</html>
+
+
+
+
+
